@@ -156,4 +156,14 @@ public class HangmanMessagePrinter {
     public void printStartingMessage() {
         System.out.println("Zagrajmy w wisielca!");
     }
+
+    public void printGameInstructions() {
+        System.out.println("Twoim zadaniem jest odgadnięcie hasła, liczba znaków \"_\" odpowiada ilości liter w haśle.");
+        System.out.println("Kiedy podasz literę alfabetu a ona zawiera się w wyrazie, odpowiedni znak \"_\" zamieni się w literę.");
+        System.out.println("Następnie będziesz mógł spróbować odgadnąć hasło.");
+        System.out.println("Jeżeli jednak podana przez ciebie litera alfabetu nie zawiera się w haśle, bądź podane przez ciebie hasło jest nieprawidłowe," +
+                " wtedy dorysowane zostaną kolejne elementy szubienicy.");
+        System.out.println("Kiedy szubienica zostanie ukończona, przegrywasz grę. :(");
+        System.out.println("Powodzenia!");
+    }
 }

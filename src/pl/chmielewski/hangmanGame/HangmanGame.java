@@ -6,5 +6,6 @@ public class HangmanGame {
 
         HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
         hangmanMessagePrinter.printStartingMessage();
+        hangmanMessagePrinter.printGameInstructions();
     }
 }
