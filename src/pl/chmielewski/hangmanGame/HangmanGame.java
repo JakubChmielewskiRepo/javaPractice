@@ -1,4 +1,4 @@
-package pl.chmielewski;
+package pl.chmielewski.hangmanGame;
 
 public class HangmanGame {
 
