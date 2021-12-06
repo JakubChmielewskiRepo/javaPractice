@@ -154,7 +154,7 @@ public class HangmanMessagePrinter {
     }
 
     public void printStartingMessage() {
-        System.out.println("Zagrajmy w wisielca!");
+        System.out.println("Zagrajmy w wisielca!\n");
     }
 
     public void printGameInstructions() {
@@ -164,6 +164,14 @@ public class HangmanMessagePrinter {
         System.out.println("Jeżeli jednak podana przez ciebie litera alfabetu nie zawiera się w haśle, bądź podane przez ciebie hasło jest nieprawidłowe," +
                 " wtedy dorysowane zostaną kolejne elementy szubienicy.");
         System.out.println("Kiedy szubienica zostanie ukończona, przegrywasz grę. :(");
-        System.out.println("Powodzenia!");
+        System.out.println("Powodzenia!\n");
+    }
+
+    public void printGameMenu() {
+        System.out.println("Wpisz cyfrę, aby wykonać przypisaną do niej akcje.\n");
+        System.out.println("1- Podaj literę alfabetu.");
+        System.out.println("2- Podaj hasło.");
+        System.out.println("3- Wyświetl stan szubienicy.");
+        System.out.println("4- Wyświetl instrukcję gry.");
     }
 }
