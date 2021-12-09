@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HangmanHelper {
+public class HangmanGameHelper {
 
     String[] wordsArray={"lekkoatletyka","interpunkcja","telekomunikacja","metamorfoza","zwierzchnictwo"," prześladowanie","antyterrorysta","dźwiękonaśladownictwo","antykoncepcja","kolorowanka","konstantynopolitański","lumpenproletariat","luminescencja","magnetoelektryczny","malkontenctwo","primaaprilisowy","pięćdziesięciogroszówka","anatomopatologiczny","deoksyrybonukleinowy",};
     HashSet<String> words=new HashSet<>(20);
@@ -17,14 +17,10 @@ public class HangmanHelper {
     return randomizedWord;
     }
 
-    public void readOptionChoseByPlayer() {
-        try {
+    public String readPlayerInput() {
+        String input="";
             Scanner scanner = new Scanner(System.in);
-            String option=scanner.next();
-
-        }catch (Exception e){
-            System.out.println("Niepoprawna instrukcja, spróbuj jeszcze raz");
-        }
-
+           input=scanner.next();
+        return input;
     }
 }

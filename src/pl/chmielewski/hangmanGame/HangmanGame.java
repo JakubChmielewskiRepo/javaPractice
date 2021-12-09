@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class HangmanGame {
-    private HangmanHelper hangmanHelper=new HangmanHelper();
+    private HangmanGameHelper hangmanGameHelper =new HangmanGameHelper();
     private HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
     private boolean hasTheGameEnded=false;
     public static void main(String[] args) {
@@ -21,14 +21,17 @@ public class HangmanGame {
     }
 
      void startGame() {
+        String choseOption;
          hangmanMessagePrinter.printStartingMessage();
          hangmanMessagePrinter.printGameInstructions();
-         String randomizedWord=hangmanHelper.randomizeWord();
+         String randomizedWord= hangmanGameHelper.randomizeWord();
          hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
          while (!hasTheGameEnded){
              hangmanMessagePrinter.printEncryptedWord(randomizedWord);
              hangmanMessagePrinter.printPlayerOptions();
-             hangmanHelper.readOptionChoseByPlayer();
+             choseOption = hangmanGameHelper.readPlayerInput();
+
+
          }
 
     }
