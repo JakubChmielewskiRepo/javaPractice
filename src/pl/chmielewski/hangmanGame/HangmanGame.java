@@ -5,7 +5,8 @@ import java.util.HashSet;
 
 public class HangmanGame {
     private HangmanHelper hangmanHelper=new HangmanHelper();
-    HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
+    private HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
+    private boolean hasTheGameEnded=false;
     public static void main(String[] args) {
 
 
@@ -24,6 +25,11 @@ public class HangmanGame {
          hangmanMessagePrinter.printGameInstructions();
          String randomizedWord=hangmanHelper.randomizeWord();
          hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
+         while (!hasTheGameEnded){
+             hangmanMessagePrinter.printEncryptedWord(randomizedWord);
+             hangmanMessagePrinter.printPlayerOptions();
+             hangmanHelper.readOptionChoseByPlayer();
+         }
 
     }
 }

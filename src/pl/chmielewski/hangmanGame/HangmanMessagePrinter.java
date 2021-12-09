@@ -178,4 +178,18 @@ public class HangmanMessagePrinter {
     public void printNumberOfLetters(String randomizedWord) {
         System.out.println("Hasło zawiera " + randomizedWord.length() + " liter.");
     }
+
+    public void printEncryptedWord(String randomizedWord) {
+
+        for (int i=0; i<randomizedWord.length(); i++){
+            System.out.print("_");
+        }
+        System.out.println("\n");
+    }
+
+    public void printPlayerOptions() {
+        System.out.println("1- Podaj literę.");
+        System.out.println("2- Sprawdź stan szubienicy.");
+        System.out.println("3- Zakończ gre.");
+    }
 }

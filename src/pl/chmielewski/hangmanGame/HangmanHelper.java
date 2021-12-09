@@ -2,6 +2,7 @@ package pl.chmielewski.hangmanGame;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HangmanHelper {
 
@@ -14,5 +15,16 @@ public class HangmanHelper {
     String randomizedWord=wordsArray[rand.nextInt(20)];
         System.out.println(randomizedWord);
     return randomizedWord;
+    }
+
+    public void readOptionChoseByPlayer() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String option=scanner.next();
+
+        }catch (Exception e){
+            System.out.println("Niepoprawna instrukcja, spróbuj jeszcze raz");
+        }
+
     }
 }
