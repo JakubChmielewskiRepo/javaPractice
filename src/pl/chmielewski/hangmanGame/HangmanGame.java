@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 public class HangmanGame {
     private HangmanHelper hangmanHelper=new HangmanHelper();
+    HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
     public static void main(String[] args) {
 
 
@@ -19,9 +20,10 @@ public class HangmanGame {
     }
 
      void startGame() {
-         HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
          hangmanMessagePrinter.printStartingMessage();
          hangmanMessagePrinter.printGameInstructions();
-         hangmanHelper.randomizeWord();
+         String randomizedWord=hangmanHelper.randomizeWord();
+         hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
+
     }
 }

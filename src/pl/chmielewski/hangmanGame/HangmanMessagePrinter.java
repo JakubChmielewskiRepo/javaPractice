@@ -174,4 +174,8 @@ public class HangmanMessagePrinter {
         System.out.println("3- Wyświetl stan szubienicy.");
         System.out.println("4- Wyświetl instrukcję gry.");
     }
+
+    public void printNumberOfLetters(String randomizedWord) {
+        System.out.println("Hasło zawiera " + randomizedWord.length() + " liter.");
+    }
 }
