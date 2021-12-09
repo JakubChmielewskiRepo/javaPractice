@@ -1,38 +1,58 @@
 package pl.chmielewski.hangmanGame;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 
 public class HangmanGame {
     private HangmanGameHelper hangmanGameHelper =new HangmanGameHelper();
     private HangmanMessagePrinter hangmanMessagePrinter=new HangmanMessagePrinter();
+    private Hangman hangman=new Hangman();
     private boolean hasTheGameEnded=false;
+
     public static void main(String[] args) {
+
 
 
         HangmanGame hangmanGame=new HangmanGame();
         Hangman hangman=new Hangman();
 
-        String[] alphabetArray={"a","b","c","d","e","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
-        HashSet<String> alphabet=new HashSet<>(Arrays.asList(alphabetArray));
-        HashSet<String> usedLetters=new HashSet<>(alphabetArray.length);
         hangmanGame.startGame();
         //hangmanMessagePrinter.printGameMenu();
     }
 
      void startGame() {
         String choseOption;
-         hangmanMessagePrinter.printStartingMessage();
-         hangmanMessagePrinter.printGameInstructions();
+
          String randomizedWord= hangmanGameHelper.randomizeWord();
-         hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
+
+
+
          while (!hasTheGameEnded){
-             hangmanMessagePrinter.printEncryptedWord(randomizedWord);
+             hangmanMessagePrinter.printStartingMessage();
+             hangmanMessagePrinter.printGameInstructions();
+             hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
              hangmanMessagePrinter.printPlayerOptions();
+             hangmanMessagePrinter.printEncryptedWord(randomizedWord);
              choseOption = hangmanGameHelper.readPlayerInput();
-             hangmanGameHelper.checkIfOptionIsCorrect(choseOption);
 
+             if (choseOption.equals("1")){
 
+             }
+             else if (choseOption.equals("2")){
+
+             }
+             else if (choseOption.equals("3")){
+                 hangmanMessagePrinter.printUsedLetters(hangman.getUsedLetters());
+             }
+             else if (choseOption.equals("4")){
+
+             }
+             else{
+                 hangmanMessagePrinter.printIncorrectInputMessage();
+             }
+
+            HangmanGameHelper.clearConsole();
          }
 
     }

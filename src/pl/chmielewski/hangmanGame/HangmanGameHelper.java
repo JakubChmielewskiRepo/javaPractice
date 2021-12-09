@@ -12,7 +12,7 @@ public class HangmanGameHelper {
     public String randomizeWord() {
         Random rand = new Random();
 
-    String randomizedWord=wordsArray[rand.nextInt(20)];
+    String randomizedWord=wordsArray[rand.nextInt(19)];
         System.out.println(randomizedWord);
     return randomizedWord;
     }
@@ -25,9 +25,29 @@ public class HangmanGameHelper {
     }
 
     public boolean checkIfOptionIsCorrect(String choseOption) {
-        if (choseOption.equals("1") || choseOption.equals("2") || choseOption.equals("3")){
+        if (choseOption.equals("1") || choseOption.equals("2") || choseOption.equals("3") || choseOption.equals("4")){
             return true;
         }
         return false;
     }
+
+    public static void clearConsole() {
+        try{
+            String operatingSystem = System.getProperty("os.name"); //Check the current operating system
+
+            if(operatingSystem.contains("Windows")){
+                ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+                Process startProcess = pb.inheritIO().start();
+                startProcess.waitFor();
+            } else {
+                ProcessBuilder pb = new ProcessBuilder("clear");
+                Process startProcess = pb.inheritIO().start();
+
+                startProcess.waitFor();
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
 }

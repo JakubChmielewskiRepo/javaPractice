@@ -1,5 +1,8 @@
 package pl.chmielewski.hangmanGame;
 
+import java.util.Collections;
+import java.util.HashSet;
+
 public class HangmanMessagePrinter {
 
 
@@ -182,7 +185,7 @@ public class HangmanMessagePrinter {
     public void printEncryptedWord(String randomizedWord) {
 
         for (int i=0; i<randomizedWord.length(); i++){
-            System.out.print("_");
+            System.out.print("_ ");
         }
         System.out.println("\n");
     }
@@ -190,6 +193,19 @@ public class HangmanMessagePrinter {
     public void printPlayerOptions() {
         System.out.println("1- Podaj literę.");
         System.out.println("2- Sprawdź stan szubienicy.");
-        System.out.println("3- Zakończ gre.");
+        System.out.println("3- Wyświetl zużyte litery.");
+        System.out.println("4- Zakończ gre.");
+    }
+
+    public void printIncorrectInputMessage() {
+        System.out.println("Wprowadzone dane są nieprawidłowe, spróbuj ponownie");
+    }
+
+    public void printUsedLetters(HashSet<String> usedLetters) {
+        for (String letter:usedLetters) {
+            System.out.print(letter);
+
+        }
+        System.out.println();
     }
 }
