@@ -23,4 +23,11 @@ public class HangmanGameHelper {
            input=scanner.next();
         return input;
     }
+
+    public boolean checkIfOptionIsCorrect(String choseOption) {
+        if (choseOption.equals("1") || choseOption.equals("2") || choseOption.equals("3")){
+            return true;
+        }
+        return false;
+    }
 }

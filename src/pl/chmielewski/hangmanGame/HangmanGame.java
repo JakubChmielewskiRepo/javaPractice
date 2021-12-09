@@ -30,6 +30,7 @@ public class HangmanGame {
              hangmanMessagePrinter.printEncryptedWord(randomizedWord);
              hangmanMessagePrinter.printPlayerOptions();
              choseOption = hangmanGameHelper.readPlayerInput();
+             hangmanGameHelper.checkIfOptionIsCorrect(choseOption);
 
 
          }
