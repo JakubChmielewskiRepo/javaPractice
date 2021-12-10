@@ -33,14 +33,18 @@ public class HangmanGame {
              hangmanMessagePrinter.printStartingMessage();
              hangmanMessagePrinter.printGameInstructions();
              hangmanMessagePrinter.printGallows(hangman.getGallowsState());
-             hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
              hangmanMessagePrinter.printUsedLetters(hangman.getUsedLetters());
-             hangmanMessagePrinter.printPlayerOptions();
+             hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
              hangmanMessagePrinter.printEncryptedWord(hangman.getHashedWord());
+             hangmanMessagePrinter.printPlayerOptions();
+
              choseOption = hangmanGameHelper.readPlayerInput();
 
              if (choseOption.equals("1")){
+                String letter=hangmanGameHelper.readPlayerInput();
+                if (hangmanGameHelper.checkIfLetterIsCorrect(letter,hangman)){
 
+                }
              }
              else if (choseOption.equals("2")){
 

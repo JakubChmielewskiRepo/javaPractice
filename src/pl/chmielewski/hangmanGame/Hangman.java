@@ -7,6 +7,9 @@ public class Hangman {
     private HashSet<String> solution;
     private int gallowsState=1;
     private String[] alphabetArray={"a","b","c","d","e","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
+
+
+
     private HashSet<String> alphabet=new HashSet<>(Arrays.asList(alphabetArray));
     private char[] word;
     private char[] hashedWord;
@@ -52,5 +55,8 @@ public class Hangman {
     public void setHashedWord() {
         hashedWord=word;
         Arrays.fill(hashedWord, '_');
+    }
+    public HashSet<String> getAlphabet() {
+        return alphabet;
     }
 }

@@ -50,4 +50,7 @@ public class HangmanGameHelper {
         }
     }
 
+    public boolean checkIfLetterIsCorrect(String letter, Hangman hangman) {
+        return hangman.getAlphabet().contains(letter);
+    }
 }
