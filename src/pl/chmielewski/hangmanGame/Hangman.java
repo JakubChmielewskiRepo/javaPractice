@@ -5,9 +5,11 @@ import java.util.HashSet;
 
 public class Hangman {
     private HashSet<String> solution;
-    private int gallowsState=0;
+    private int gallowsState=1;
     private String[] alphabetArray={"a","b","c","d","e","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
     private HashSet<String> alphabet=new HashSet<>(Arrays.asList(alphabetArray));
+    private char[] word;
+    private char[] hashedWord;
 
     public HashSet<String> getUsedLetters() {
         return usedLetters;
@@ -35,5 +37,20 @@ public class Hangman {
         this.solution = solution;
     }
 
+    public char[] getWord() {
+        return word;
+    }
 
+    public void setWord(char[] word) {
+        this.word = word;
+    }
+
+    public char[] getHashedWord() {
+        return hashedWord;
+    }
+
+    public void setHashedWord() {
+        hashedWord=word;
+        Arrays.fill(hashedWord, '_');
+    }
 }

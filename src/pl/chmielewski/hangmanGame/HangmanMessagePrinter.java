@@ -7,6 +7,7 @@ public class HangmanMessagePrinter {
 
 
     public void printGallows(int gallowsStep) {
+        System.out.println("Szubienica:\n");
         switch (gallowsStep){
             case 1:
                 System.out.print
@@ -154,6 +155,7 @@ public class HangmanMessagePrinter {
                         );
                 break;
         }
+        System.out.println();
     }
 
     public void printStartingMessage() {
@@ -182,18 +184,18 @@ public class HangmanMessagePrinter {
         System.out.println("Hasło zawiera " + randomizedWord.length() + " liter.");
     }
 
-    public void printEncryptedWord(String randomizedWord) {
+    public void printEncryptedWord(char[] hashedWord) {
 
-        for (int i=0; i<randomizedWord.length(); i++){
-            System.out.print("_ ");
+        for (char letter:hashedWord) {
+            System.out.print(letter+" ");
         }
         System.out.println("\n");
     }
 
     public void printPlayerOptions() {
+        System.out.println();
         System.out.println("1- Podaj literę.");
-        System.out.println("2- Sprawdź stan szubienicy.");
-        System.out.println("3- Wyświetl zużyte litery.");
+        System.out.println("3- Podaj hasło");
         System.out.println("4- Zakończ gre.");
     }
 
@@ -202,6 +204,8 @@ public class HangmanMessagePrinter {
     }
 
     public void printUsedLetters(HashSet<String> usedLetters) {
+        System.out.println();
+        System.out.println("Użyte litery:");
         for (String letter:usedLetters) {
             System.out.print(letter);
 

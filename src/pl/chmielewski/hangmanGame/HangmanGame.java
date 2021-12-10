@@ -25,15 +25,18 @@ public class HangmanGame {
         String choseOption;
 
          String randomizedWord= hangmanGameHelper.randomizeWord();
-
+        hangman.setWord(randomizedWord.toCharArray());
+        hangman.setHashedWord();
 
 
          while (!hasTheGameEnded){
              hangmanMessagePrinter.printStartingMessage();
              hangmanMessagePrinter.printGameInstructions();
+             hangmanMessagePrinter.printGallows(hangman.getGallowsState());
              hangmanMessagePrinter.printNumberOfLetters(randomizedWord);
+             hangmanMessagePrinter.printUsedLetters(hangman.getUsedLetters());
              hangmanMessagePrinter.printPlayerOptions();
-             hangmanMessagePrinter.printEncryptedWord(randomizedWord);
+             hangmanMessagePrinter.printEncryptedWord(hangman.getHashedWord());
              choseOption = hangmanGameHelper.readPlayerInput();
 
              if (choseOption.equals("1")){
