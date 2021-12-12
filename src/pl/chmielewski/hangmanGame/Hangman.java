@@ -6,10 +6,9 @@ import java.util.HashSet;
 public class Hangman {
     private HashSet<String> solution;
     private int gallowsState=1;
-    private String[] alphabetArray={"a","b","c","d","e","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
 
-
-
+    private String[] alphabetArray={"a","ą","b","c","ć","d","e","ę","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
+    private HashSet<String> usedLetters=new HashSet<>(alphabetArray.length);
     private HashSet<String> alphabet=new HashSet<>(Arrays.asList(alphabetArray));
     private char[] word;
     private char[] hashedWord;
@@ -18,18 +17,16 @@ public class Hangman {
         return usedLetters;
     }
 
-    public void setUsedLetters(HashSet<String> usedLetters) {
-        this.usedLetters = usedLetters;
+    public void setUsedLetters(Hangman hangman,String letter) {
+        hangman.usedLetters.add(letter);
     }
-
-    private HashSet<String> usedLetters=new HashSet<>(alphabetArray.length);
 
     public int getGallowsState() {
         return gallowsState;
     }
 
-    public void setGallowsState(int gallowsState) {
-        this.gallowsState = gallowsState;
+    public void incrementGallowsState() {
+        gallowsState++;
     }
 
     public HashSet<String> getCode() {
@@ -53,10 +50,32 @@ public class Hangman {
     }
 
     public void setHashedWord() {
-        hashedWord=word;
+        hashedWord=new char[word.length];
         Arrays.fill(hashedWord, '_');
     }
     public HashSet<String> getAlphabet() {
         return alphabet;
     }
+
+    public boolean checkIfWordIncludesLetter(String letter) {
+        for (char wordLetter : word) {
+            if (wordLetter == letter.charAt(0)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void setHashedWordLetter(String letter) {
+        for (int i=0;i<word.length;i++){
+            if (word[i] == letter.charAt(0)) {
+                hashedWord[i] = letter.charAt(0);
+            }
+        }
+    }
+
+    public void setGallowsState(int state) {
+        gallowsState=state;
+    }
 }
+
