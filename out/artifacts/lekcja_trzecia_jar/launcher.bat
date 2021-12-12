@@ -1,1 +1,0 @@
-java -jar E:\java2021\kurs\lekcja_trzecia\out\artifacts\lekcja_trzecia_jar\lekcja_trzecia.jar
