@@ -231,4 +231,10 @@ class HangmanMessagePrinter {
      void printInsertPasswordMessage() {
         System.out.println("Podaj hasło:");
     }
+
+     void printRestartMessage() {
+         System.out.println();
+         System.out.println("Wpisz cyfrę: "+" 1 " +"aby zagrać jeszcze raz, lub cokolwiek innego aby wyjść z gry." );
+
+    }
 }

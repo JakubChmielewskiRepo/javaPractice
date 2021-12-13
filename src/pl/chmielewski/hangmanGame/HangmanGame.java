@@ -48,8 +48,17 @@ import java.util.Arrays;
              if (judgeIfTheGameHasEnded()) break;
              HangmanGameHelper.clearConsole();
          }
+         playAgain();
+     }
 
-    }
+     private void playAgain() {
+         hangmanMessagePrinter.printRestartMessage();
+         String restartDecision=hangmanGameHelper.readPlayerInput();
+         if (restartDecision.equals("1")){
+             HangmanGameHelper.clearConsole();
+             main(new String[]{""});
+         }
+     }
 
      private boolean judgeIfTheGameHasEnded() {
         if (hangman.getGallowsState()==11){

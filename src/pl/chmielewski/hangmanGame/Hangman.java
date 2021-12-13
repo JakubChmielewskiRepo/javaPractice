@@ -3,7 +3,7 @@ package pl.chmielewski.hangmanGame;
 import java.util.Arrays;
 import java.util.HashSet;
 
-class Hangman {
+    class Hangman {
     private int gallowsState=1;
 
     private String[] alphabetArray={"a","ą","b","c","ć","d","e","ę","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
