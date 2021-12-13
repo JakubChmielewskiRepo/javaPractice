@@ -3,8 +3,7 @@ package pl.chmielewski.hangmanGame;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class Hangman {
-    private HashSet<String> solution;
+class Hangman {
     private int gallowsState=1;
 
     private String[] alphabetArray={"a","ą","b","c","ć","d","e","ę","f","g","h","i","j","k","l","ł","m","n","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"};
@@ -13,51 +12,43 @@ public class Hangman {
     private char[] word;
     private char[] hashedWord;
 
-    public HashSet<String> getUsedLetters() {
+    HashSet<String> getUsedLetters() {
         return usedLetters;
     }
 
-    public void setUsedLetters(Hangman hangman,String letter) {
+     void setUsedLetters(Hangman hangman,String letter) {
         hangman.usedLetters.add(letter);
     }
 
-    public int getGallowsState() {
+     int getGallowsState() {
         return gallowsState;
     }
 
-    public void incrementGallowsState() {
+     void incrementGallowsState() {
         gallowsState++;
     }
 
-    public HashSet<String> getCode() {
-        return solution;
-    }
-
-    public void setCode(HashSet<String> solution) {
-        this.solution = solution;
-    }
-
-    public char[] getWord() {
+     char[] getWord() {
         return word;
     }
 
-    public void setWord(char[] word) {
+     void setWord(char[] word) {
         this.word = word;
     }
 
-    public char[] getHashedWord() {
+     char[] getHashedWord() {
         return hashedWord;
     }
 
-    public void setHashedWord() {
+     void setHashedWord() {
         hashedWord=new char[word.length];
         Arrays.fill(hashedWord, '_');
     }
-    public HashSet<String> getAlphabet() {
+     HashSet<String> getAlphabet() {
         return alphabet;
     }
 
-    public boolean checkIfWordIncludesLetter(String letter) {
+     boolean checkIfWordIncludesLetter(String letter) {
         for (char wordLetter : word) {
             if (wordLetter == letter.charAt(0)) {
                 return true;
@@ -66,7 +57,7 @@ public class Hangman {
         return false;
     }
 
-    public void setHashedWordLetter(String letter) {
+     void setHashedWordLetter(String letter) {
         for (int i=0;i<word.length;i++){
             if (word[i] == letter.charAt(0)) {
                 hashedWord[i] = letter.charAt(0);
@@ -74,7 +65,7 @@ public class Hangman {
         }
     }
 
-    public void setGallowsState(int state) {
+     void setGallowsState(int state) {
         gallowsState=state;
     }
 }
