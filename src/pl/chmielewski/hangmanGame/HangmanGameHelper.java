@@ -10,8 +10,7 @@ import java.util.Scanner;
      String randomizeWord() {
         Random rand = new Random();
 
-    String randomizedWord=wordsArray[rand.nextInt(19)];
-    return randomizedWord;
+         return wordsArray[rand.nextInt(wordsArray.length)];
     }
 
      String readPlayerInput() {
