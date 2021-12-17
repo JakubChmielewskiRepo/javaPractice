@@ -25,6 +25,7 @@ import java.util.Arrays;
 
 
          while (!hasTheGameEnded){
+             HangmanGameHelper.clearConsole();
              printBasicInfo(randomizedWord);
 
              choseOption = hangmanGameHelper.readPlayerInput();
